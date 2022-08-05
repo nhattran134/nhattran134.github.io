@@ -1,55 +1,105 @@
-# Latex Jekyll
-![Alt text](./LatexJekyll.png?raw=true "LatexJekyll website")
-## Try it out
-[Try it here](https://unruffled-ardinghelli-55d901.netlify.app)
+<div align="center">
 
-## Getting started from scratch
-1. Clone  
-```git clone https://github.com/Hammie217/LatexJekyll.git```  
-2. Change directory  
-```cd LatexJekyll```  
-3. Updating bundle to resolve dependecy errors
-```bundle update```
-> Before running `bundle update` command make sure your system meets the [Jekyll Installation Requirements](https://jekyllrb.com/docs/installation/).
-4. Start Jekyll Server  
-```jekyll serve```  
-5. Connect to localhost  
+  # Chirpy Jekyll Theme
 
-## What is there?
+  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
-### Title settings
+  [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy?color=brightgreen)](https://rubygems.org/gems/jekyll-theme-chirpy)
+  [![Build Status](https://github.com/cotes2020/jekyll-theme-chirpy/workflows/build/badge.svg?branch=master&event=push)](https://github.com/cotes2020/jekyll-theme-chirpy/actions?query=branch%3Amaster+event%3Apush)
+  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4e556876a3c54d5e8f2d2857c4f43894)](https://www.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cotes2020/jekyll-theme-chirpy&amp;utm_campaign=Badge_Grade)
+  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
+  [![996.icu](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu)
 
- - title - Set the main page title
- - author -  Set the authors name on the title page. Removed if none defined.
- - date - Set the front page date. Removed if none defined.
- - abstract - Set the text for the abstract. Removed if none defined.
+  [**Live Demo →**](https://cotes2020.github.io/chirpy-demo)
+
+  [![Devices Mockup](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/commons/devices-mockup.png)](https://cotes2020.github.io/chirpy-demo)
+
+</div>
+
+## Features
+
+- Localized Layout
+- Dark/Light Theme Mode
+- Pinned Posts
+- Hierarchical Categories
+- Last Modified Date for Posts
+- Table of Contents
+- Auto-generated Related Posts
+- Syntax Highlighting
+- Mathematical Expressions
+- Mermaid Diagram & Flowchart
+- Disqus/Utterances/Giscus Comments
+- Search
+- Atom Feeds
+- Google Analytics
+- GA Pageviews Reporting
+- SEO & Performance Optimization
 
 
-### Sections
+## Quick Start
 
- - Section - Sets font styling of section. Requires manual numbering. `<p  class="Section">1 &ensp; Introduction</p>`
- - Sub Section - Sets font styling of subsection. Requires manual numbering. `<p  class="SubSection">1.2 &ensp; Text Styles</p>`
+Before starting, please follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of `Ruby`, `RubyGems`, `Jekyll`, and `Bundler`. In addition, [Git](https://git-scm.com/) is also required to be installed.
 
-### Body settings
+### Step 1. Creating a New Site
 
- - BodyText - Sets paragraph settings for single column. `<p  class="BodyText">`
- - BodyText2Col  - Sets paragraph settings for double colum. `<p  class="BodyText2Col">`
- - BodyText3Col  - Sets paragraph settings for triple column. `<p  class="BodyText3Col">`
- - Justified - Justifies text to take 100% of the width. `<p  class="Justified">`
+Create a new repository from the [**Chirpy Starter**](https://github.com/cotes2020/chirpy-starter/generate) and name it `<GH_USERNAME>.github.io`, where `GH_USERNAME` represents your GitHub username.
 
-### Font sizes
+### Step 2. Installing Dependencies
 
- - tiny
- - scriptsize
- - footnotesize
- - small
- - normalsize
- - large
- - Large
- - LARGE
- - huge
- - HUGE
+Before running for the first time, go to the root directory of your site, and install dependencies as follows:
 
- ### Maths
+```console
+$ bundle
+```
 
- Maths is delivered using mathJax. An inline latex equation can be done with "\\( ... \\)" or on a new line using "\\[ ... \\]".
+### Step 3. Running Local Server
+
+Run the following command in the root directory of the site:
+
+```console
+$ bundle exec jekyll s
+```
+
+Or run with Docker:
+
+```console
+$ docker run -it --rm \
+    --volume="$PWD:/srv/jekyll" \
+    -p 4000:4000 jekyll/jekyll \
+    jekyll serve
+```
+
+After a while, navigate to the site at <http://localhost:4000>.
+
+## Documentation
+
+For more details on usage, please refer to the tutorial on the [demo website](https://cotes2020.github.io/chirpy-demo/) / [wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki). Note that the tutorial is based on the [latest tag](https://github.com/cotes2020/jekyll-theme-chirpy/tags), and the features of the default branch are usually ahead of the documentation.
+
+## Contributing
+
+Welcome to report bugs, improve code quality or submit a new feature. For more information, see [contributing guidelines](.github/CONTRIBUTING.md).
+
+## Credits
+
+This theme is mainly built with [Jekyll](https://jekyllrb.com/) ecosystem, [Bootstrap](https://getbootstrap.com/), [Font Awesome](https://fontawesome.com/) and some other wonderful tools (their copyright information can be found in the relevant files). The avatar and favicon design come from [Clipart Max](https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/).
+
+:tada: Thanks to all the volunteers who contributed to this project, their GitHub IDs are on [this list](https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors). Also, I won't forget those guys who submitted the issues or unmerged PR because they reported bugs, shared ideas, or inspired me to write more readable documentation.
+
+Last but not least, thank [JetBrains][jb] for providing the OSS development license.
+
+## Sponsoring
+
+If you like this theme or find it helpful, please consider sponsoring me, because it will encourage and help me better maintain the project, I will be very grateful!
+
+[![Ko-fi](https://img.shields.io/badge/-Buy%20Me%20a%20Coffee-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/coteschung)
+[![Wechat Pay](https://img.shields.io/badge/-Tip%20Me%20on%20WeChat-brightgreen?logo=wechat&logoColor=white)][cn-donation]
+[![Alipay](https://img.shields.io/badge/-Tip%20Me%20on%20Alipay-blue?logo=alipay&logoColor=white)][cn-donation]
+
+## License
+
+This work is published under [MIT](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE) License.
+
+<!-- ReadMe links -->
+
+[jb]: https://www.jetbrains.com/?from=jekyll-theme-chirpy
+[cn-donation]: https://cotes.gitee.io/alipay-wechat-donation/
