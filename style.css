@@ -259,7 +259,7 @@ ul{list-style:none}
 @media(max-width:900px){
   /* Nav */
   .nav{max-width:none;width:auto;padding:10px 20px;gap:0;left:16px;right:auto;transform:none;top:16px}
-  .nav-links{position:fixed;top:68px;right:16px;left:auto;width:200px;background:var(--bg-white);border-radius:var(--radius);box-shadow:var(--clay-shadow);flex-direction:column;padding:16px;gap:4px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s;z-index:200}
+  .nav-links{position:fixed;top:68px;right:16px;left:auto;width:200px;margin-left:0;background:var(--bg-white);border-radius:var(--radius);box-shadow:var(--clay-shadow);flex-direction:column;padding:16px;gap:4px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s;z-index:200}
   .nav-links.open{opacity:1;visibility:visible;pointer-events:all;transform:translateY(0)}
   .nav-links li{text-align:left}
   .nav-links a{font-size:.9rem;display:block;padding:10px 14px;border-radius:12px;transition:background .2s,color .2s}
