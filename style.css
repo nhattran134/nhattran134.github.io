@@ -62,9 +62,9 @@ ul{list-style:none}
 .nav-mobile{display:none}
 
 /* Nav toggle = logo button on mobile */
-.nav-toggle{display:none;border:none;cursor:pointer;padding:0;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#FF6B9D,#B388FF);align-items:center;justify-content:center;box-shadow:6px 6px 16px rgba(255,107,157,.25),inset 2px 2px 4px rgba(255,255,255,.3);overflow:hidden}
+.nav-toggle{display:none;border:none;cursor:pointer;padding:6px 14px;height:auto;width:auto;border-radius:var(--radius-pill);background:linear-gradient(135deg,var(--pink-bg),var(--purple-bg));align-items:center;justify-content:center;box-shadow:var(--clay-shadow-sm);overflow:hidden}
 .nav-toggle span{display:block;width:20px;height:2px;background:#fff;border-radius:4px;transition:transform .3s,opacity .3s}
-.logo-btn{width:32px;height:32px;object-fit:contain;filter:brightness(100);}
+.logo-btn{height:28px;width:auto;object-fit:contain}
 
 /* Desktop nav */
 .nav-logo{display:flex;align-items:center;padding:6px 14px;border-radius:var(--radius-pill);background:linear-gradient(135deg,var(--pink-bg),var(--purple-bg));justify-content:center}
