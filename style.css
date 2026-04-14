@@ -277,6 +277,9 @@ ul{list-style:none}
   .hero-sub{margin-left:auto;margin-right:auto}
   .hero-cta{justify-content:center}
   .availability{justify-content:center}
+  .hero-tools{margin-top:32px}
+  .marquee-item{font-size:.78rem;padding:3px 0}
+  .marquee-item::after{margin:0 14px;font-size:1.1rem}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
   .stat{padding:16px 20px}
   .section{padding:80px 0}
