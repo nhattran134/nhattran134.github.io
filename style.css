@@ -285,7 +285,7 @@ ul{list-style:none}
   .hero-sub{margin-left:auto;margin-right:auto;max-width:100%}
   .hero-cta{justify-content:center}
   .availability{justify-content:center}
-  .avatar-deco{display:none}
+  .avatar-deco{transform:scale(.6)}
   .hero-tools{margin-top:32px;overflow:hidden;width:100vw;margin-left:calc(-50vw + 50%)}
   .hero-tools p{text-align:center;font-size:.7rem;margin-bottom:10px}
   .scroll-indicator{display:none}
