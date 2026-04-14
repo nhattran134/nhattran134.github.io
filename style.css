@@ -60,7 +60,7 @@ ul{list-style:none}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);white-space:nowrap;position:relative;overflow:hidden;display:block}
 .logo-name,.logo-alias{display:block;transition:transform .3s ease,opacity .3s ease}
 .logo-name em{font-style:normal;color:var(--pink);font-weight:400}
-.logo-alias{position:absolute;top:0;left:0;color:var(--pink);font-weight:700;opacity:0;transform:translateY(100%)}
+.logo-alias{position:absolute;top:0;left:0;right:0;text-align:center;color:var(--pink);font-weight:700;opacity:0;transform:translateY(100%)}
 .nav-logo:hover .logo-name{opacity:0;transform:translateY(-100%)}
 .nav-logo:hover .logo-alias{opacity:1;transform:translateY(0)}
 /* Mobile menu wrapper — hidden on desktop */
