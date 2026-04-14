@@ -62,14 +62,12 @@ ul{list-style:none}
 .nav-mobile{display:none}
 
 /* Nav toggle = logo button on mobile */
-.nav-toggle{display:none;border:none;cursor:pointer;padding:6px 14px;height:auto;width:auto;border-radius:var(--radius-pill);background:linear-gradient(135deg,var(--pink-bg),var(--purple-bg));align-items:center;justify-content:center;box-shadow:var(--clay-shadow-sm);overflow:hidden}
-.nav-toggle span{display:block;width:20px;height:2px;background:#fff;border-radius:4px;transition:transform .3s,opacity .3s}
-.logo-btn{height:28px;width:auto;object-fit:contain}
+.nav-toggle{display:none;border:none;cursor:pointer;padding:0;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;letter-spacing:1px;align-items:center;justify-content:center;box-shadow:var(--clay-shadow-sm)}
+.nav-toggle span{display:none}
 
 /* Desktop nav */
-.nav-logo{display:flex;align-items:center;padding:6px 14px;border-radius:var(--radius-pill);background:linear-gradient(135deg,var(--pink-bg),var(--purple-bg));justify-content:center}
-.logo-img{height:28px;width:auto;transition:transform .3s}
-.logo-img:hover{transform:scale(1.08)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--text)}
+.nav-logo em{font-style:normal;color:var(--pink)}
 .nav-links{display:flex;align-items:center;gap:24px;margin-left:auto}
 .nav-links a{font-size:.85rem;font-weight:500;color:var(--text-muted);transition:color .3s}
 .nav-links a:hover{color:var(--pink)}
