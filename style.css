@@ -293,10 +293,13 @@ ul{list-style:none}
 
   /* Section spacing */
   .section{padding:80px 0}
+  body{padding-bottom:60px}
 
   /* Footer */
-  .footer-content{flex-direction:column;text-align:center;gap:12px;padding:24px 20px}
-  .footer-links{justify-content:center}
+  .footer{position:fixed;bottom:0;left:0;right:0;z-index:90;padding:0;margin:0}
+  .footer-content{border-radius:0;box-shadow:0 -2px 12px rgba(166,140,180,.12);padding:12px 16px;gap:8px}
+  .footer p{font-size:.7rem}
+  .footer-links a{font-size:.7rem}
 }
 
 @media(max-width:480px){
