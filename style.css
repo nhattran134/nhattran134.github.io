@@ -64,11 +64,12 @@ ul{list-style:none}
 /* Nav toggle = logo button on mobile */
 .nav-toggle{display:none;border:none;cursor:pointer;padding:0;width:48px;height:48px;border-radius:50%;background:var(--bg-white);align-items:center;justify-content:center;box-shadow:var(--clay-shadow-sm);overflow:hidden}
 .nav-toggle span{display:block;width:20px;height:2px;background:var(--text);border-radius:4px;transition:transform .3s,opacity .3s}
-.logo-btn{width:36px;height:36px;object-fit:contain}
+.logo-btn{width:36px;height:36px;object-fit:contain;filter:grayscale(1)}
 
 /* Desktop nav */
 .nav-logo{display:flex;align-items:center}
-.logo-img{height:40px;width:auto}
+.logo-img{height:40px;width:auto;filter:grayscale(1);transition:filter .3s}
+.logo-img:hover{filter:grayscale(0)}
 .nav-links{display:flex;align-items:center;gap:24px;margin-left:auto}
 .nav-links a{font-size:.85rem;font-weight:500;color:var(--text-muted);transition:color .3s}
 .nav-links a:hover{color:var(--pink)}
