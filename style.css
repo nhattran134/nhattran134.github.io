@@ -57,16 +57,18 @@ ul{list-style:none}
 /* ── Navigation ── */
 .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;padding:8px 28px;display:flex;align-items:center;gap:32px;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:var(--radius-pill);box-shadow:var(--clay-shadow-sm);transition:all .3s;max-width:720px;width:calc(100% - 48px)}
 .nav.scrolled{box-shadow:var(--clay-shadow)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);white-space:nowrap;position:relative;overflow:hidden;display:inline-block}
-.logo-name,.logo-alias{display:block;transition:transform .3s ease,opacity .3s ease}
-.logo-name em{font-style:normal;color:var(--pink);font-weight:400}
-.logo-alias{position:absolute;top:0;left:0;right:0;text-align:center;color:var(--pink);font-weight:700;opacity:0;transform:translateY(100%)}
-.nav-logo:hover .logo-name{opacity:0;transform:translateY(-100%)}
-.nav-logo:hover .logo-alias{opacity:1;transform:translateY(0)}
 /* Mobile menu wrapper — hidden on desktop */
 .mobile-menu{display:none;position:fixed;top:16px;right:16px;z-index:201}
 .nav-mobile{display:none}
 
+/* Nav toggle = logo button on mobile */
+.nav-toggle{display:none;border:none;cursor:pointer;padding:0;width:48px;height:48px;border-radius:50%;background:var(--bg-white);align-items:center;justify-content:center;box-shadow:var(--clay-shadow-sm);overflow:hidden}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--text);border-radius:4px;transition:transform .3s,opacity .3s}
+.logo-btn{width:36px;height:36px;object-fit:contain}
+
+/* Desktop nav */
+.nav-logo{display:flex;align-items:center}
+.logo-img{height:40px;width:auto}
 .nav-links{display:flex;align-items:center;gap:24px;margin-left:auto}
 .nav-links a{font-size:.85rem;font-weight:500;color:var(--text-muted);transition:color .3s}
 .nav-links a:hover{color:var(--pink)}
@@ -262,7 +264,6 @@ ul{list-style:none}
 
 @media(max-width:900px){
   /* Nav */
-  .nav{max-width:none;width:auto;padding:10px 20px;gap:0;left:16px;right:auto;transform:none;top:16px;display:inline-flex}
   .nav-desktop{display:none!important}
   .mobile-menu{display:block}
   .nav-toggle{display:flex}
@@ -303,7 +304,7 @@ ul{list-style:none}
 @media(max-width:480px){
   /* Nav */
   .nav{top:8px;padding:8px 16px;gap:8px;max-width:calc(100% - 24px)}
-  .nav-logo{font-size:1.1rem;min-width:110px;text-align:center}
+  .nav-logo{display:none}
 
   /* Hero */
   .hero{padding:80px 16px 60px}
