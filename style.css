@@ -265,7 +265,7 @@ ul{list-style:none}
   .nav-links a{font-size:.9rem;display:block;padding:10px 14px;border-radius:12px;transition:background .2s,color .2s}
   .nav-links a:hover{background:var(--pink-bg);color:var(--pink)}
   .btn-nav{text-align:center!important;margin-top:4px}
-  .nav-toggle{display:flex;position:fixed;top:8px;right:8px;z-index:201;width:44px;height:44px;border-radius:50%;background:var(--bg-white);align-items:center;justify-content:center;box-shadow:var(--clay-shadow-sm)}
+  .nav-toggle{display:flex;position:fixed;top:env(safe-area-inset-top,0px);right:0;z-index:201;width:44px;height:44px;border-radius:0 0 0 16px;background:var(--bg-white);align-items:center;justify-content:center;box-shadow:var(--clay-shadow-sm)}
 
   /* Hero */
   .hero-grid{grid-template-columns:1fr;gap:24px}
