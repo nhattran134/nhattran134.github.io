@@ -1,0 +1,78 @@
+---
+const experience = [
+  {
+    company: 'Datum Consulting',
+    period: 'Oct 2024 - Present',
+    location: 'Ho Chi Minh City',
+    roles: [
+      {
+        title: 'Release Manager',
+        period: 'Mar 2025 - Present',
+        bullets: [
+          'Release planning and CAB coordination across multi-environment pipelines',
+          'Rollback management and post-deployment monitoring for enterprise platforms',
+          'Cross-team release scheduling for large-scale banking applications',
+        ],
+      },
+      {
+        title: 'Senior Platform Engineer',
+        period: 'Oct 2024 - Present',
+        bullets: [
+          'Designed CI/CD pipeline blueprints for large .NET monorepos using GitHub Actions',
+          'Implemented per-component versioning with GitOps deployment workflows',
+          'Built security scanning gates integrating Checkov, Trivy, and OPA',
+          'Set up AWS Landing Zones, FinOps dashboards, and Terraform pipelines',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'FPT Software',
+    period: 'Jun 2020 - Sep 2024',
+    location: 'Ho Chi Minh City',
+    roles: [
+      {
+        title: 'DevOps / SRE',
+        period: 'Jun 2020 - Sep 2024',
+        bullets: [
+          'Terraform infrastructure for serverless and data pipelines on AWS',
+          'Azure IoT platform infrastructure with Terraform and ARM templates',
+          'CI/CD pipelines with Jenkins and GitHub Actions',
+          'Production SRE, incident management, and monitoring',
+        ],
+      },
+    ],
+  },
+];
+---
+
+<section id="experience" class="section">
+  <div class="container">
+    <p class="section-label reveal">Experience</p>
+    <h2 class="section-title reveal stagger-1">Where I've Worked</h2>
+    <div class="timeline reveal stagger-2">
+      {experience.map((exp) => (
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-company">
+            <h3>{exp.company}</h3>
+            <span class="timeline-meta">{exp.period} &middot; {exp.location}</span>
+          </div>
+          <div class="timeline-roles">
+            {exp.roles.map((role) => (
+              <div class="timeline-role">
+                <h4>{role.title}</h4>
+                <span class="timeline-period">{role.period}</span>
+                <ul>
+                  {role.bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<Base title="Blog | Nhat Tran Minh">
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Blog</p>
+      <h2 class="section-title">All Posts</h2>
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="card blog-card">
+            <time datetime={post.data.date}>{new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <h4>{post.data.title}</h4>
+            <p>{post.data.excerpt}</p>
+            <div class="tag-row">
+              {post.data.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

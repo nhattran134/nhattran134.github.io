@@ -1,0 +1,87 @@
+---
+const categories = [
+  { name: 'CI/CD', items: ['GitHub Actions', 'GitLab CI', 'Jenkins', 'ArgoCD', 'Release-Please'] },
+  { name: 'Cloud', items: ['AWS', 'Azure', 'GCP'] },
+  { name: 'IaC', items: ['Terraform', 'ARM Templates', 'CloudFormation'] },
+  { name: 'Containers', items: ['Docker', 'Kubernetes', 'Helm'] },
+  { name: 'Monitoring', items: ['Datadog', 'CloudWatch', 'Grafana'] },
+  { name: 'Security', items: ['Checkov', 'Trivy', 'OPA/Conftest', 'SonarQube'] },
+  { name: 'Languages', items: ['Python', 'Bash/Shell', 'Go', 'YAML', 'HCL'] },
+];
+
+const certs = [
+  { name: 'AWS Solutions Architect', level: 'Professional', logo: 'aws', color: '#FF9900' },
+  { name: 'AWS DevOps Engineer', level: 'Professional', logo: 'aws', color: '#FF9900' },
+  { name: 'AWS Developer', level: 'Associate', logo: 'aws', color: '#FF9900' },
+  { name: 'GCP Cloud Developer', level: 'Professional', logo: 'gcp', color: '#4285F4' },
+  { name: 'GCP Solutions Architect', level: 'Professional', logo: 'gcp', color: '#4285F4' },
+  { name: 'MongoDB Developer', level: 'Associate', logo: 'mongodb', color: '#00ED64' },
+  { name: 'Scrum Master II', level: 'PSM II', logo: 'scrum', color: '#009FDA' },
+];
+---
+
+<section id="skills" class="section">
+  <div class="container">
+    <p class="section-label reveal">Skills & Certifications</p>
+    <h2 class="section-title reveal stagger-1">Tools of the Trade</h2>
+    <div class="skills-grid reveal stagger-2">
+      {categories.map((cat) => (
+        <div class="skill-group">
+          <h4>{cat.name}</h4>
+          <div class="pill-row">
+            {cat.items.map((item) => (
+              <span class="pill">{item}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    <h3 class="certs-heading reveal stagger-3">Certifications</h3>
+    <div class="cert-grid reveal stagger-4">
+      {certs.map((cert) => (
+        <div class="card cert-card">
+          <div class="cert-logo" style={`--cert-color: ${cert.color}`}>
+            {cert.logo === 'aws' && (
+              <svg viewBox="0 0 64 64" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.1 28.2c0 .7.1 1.3.2 1.7.2.5.4.9.6 1.5.1.2.2.4.2.5 0 .2-.1.4-.4.7l-1.3.9c-.2.1-.4.2-.5.2-.2 0-.4-.1-.6-.3-.3-.3-.5-.6-.7-1-.2-.4-.4-.8-.6-1.3-1.6 1.9-3.6 2.8-6 2.8-1.7 0-3.1-.5-4.1-1.5s-1.5-2.3-1.5-3.9c0-1.7.6-3.1 1.9-4.2 1.3-1 2.9-1.6 5.1-1.6.7 0 1.4.1 2.2.2.8.1 1.6.3 2.4.5v-1.5c0-1.5-.3-2.6-1-3.3-.6-.7-1.7-1-3.3-1-.7 0-1.4.1-2.2.3-.8.2-1.5.4-2.2.8-.3.2-.6.3-.7.3-.2 0-.3-.1-.3-.4v-1.1c0-.3 0-.5.1-.6.1-.1.3-.3.6-.4.7-.4 1.6-.7 2.5-.9.9-.3 1.9-.4 3-.4 2.3 0 3.9.5 5 1.6 1 1.1 1.5 2.7 1.5 4.9v6.4zm-8.3 3.1c.7 0 1.4-.1 2.1-.4.8-.3 1.4-.7 2-1.3.3-.4.6-.8.7-1.3.1-.5.2-1.1.2-1.8v-.9c-.6-.2-1.2-.3-1.9-.4-.7-.1-1.3-.1-2-.1-1.4 0-2.4.3-3 .8-.7.6-1 1.3-1 2.3 0 .9.2 1.6.7 2.1.5.6 1.2.8 2.1.8zm16.4 2.2c-.3 0-.5 0-.6-.2-.2-.1-.3-.4-.4-.8L20.8 17c-.1-.4-.2-.7-.2-.8 0-.3.2-.5.5-.5h2c.3 0 .5.1.6.2.2.1.3.4.4.8l3 12 2.8-12c.1-.4.2-.7.4-.8.2-.1.4-.2.7-.2h1.6c.3 0 .5.1.7.2.2.1.3.4.4.8l2.8 12.2 3.1-12.2c.1-.4.2-.7.4-.8.2-.1.4-.2.6-.2h1.9c.3 0 .5.2.5.5 0 .1 0 .2-.1.4 0 .1-.1.3-.2.5l-4.3 15.5c-.1.4-.2.7-.4.8-.2.1-.4.2-.6.2h-1.7c-.3 0-.5-.1-.7-.2-.2-.1-.3-.4-.4-.8l-2.8-11.7-2.7 11.7c-.1.4-.2.7-.4.8-.2.1-.4.2-.7.2h-1.7zm26.2.6c-1.1 0-2.1-.1-3.1-.4-1-.3-1.8-.6-2.3-1-.3-.2-.5-.4-.6-.6 0-.2-.1-.3-.1-.5v-1.1c0-.3.1-.5.3-.5.1 0 .2 0 .3.1.1.1.3.1.5.2.7.3 1.4.6 2.2.8.8.2 1.5.3 2.3.3 1.2 0 2.2-.2 2.8-.7.6-.5 1-1.1 1-2 0-.6-.2-1.1-.5-1.4-.4-.4-1-.7-2-1l-2.8-.9c-1.4-.5-2.5-1.1-3.1-2-.6-.8-1-1.8-1-2.9 0-.8.2-1.6.5-2.2.4-.7.8-1.2 1.4-1.7.6-.5 1.3-.8 2.1-1.1.8-.3 1.7-.4 2.6-.4.5 0 .9 0 1.4.1.5.1.9.2 1.4.3.4.1.8.3 1.2.4.4.2.7.3.9.5.3.2.5.3.6.5.1.2.2.4.2.7v1c0 .3-.1.5-.3.5-.1 0-.3-.1-.6-.2-1.3-.6-2.7-.9-4.2-.9-1.1 0-2 .2-2.6.6-.6.4-.9 1-.9 1.8 0 .6.2 1.1.6 1.5.4.4 1.1.7 2.1 1.1l2.7.9c1.4.5 2.4 1.1 3 1.9.6.8.9 1.7.9 2.8 0 .9-.2 1.6-.5 2.3-.4.7-.8 1.3-1.5 1.7-.6.5-1.3.8-2.2 1.1-.9.3-1.8.4-2.8.4z" fill="#FF9900"/>
+                <path d="M50.4 41.5c-5.8 4.3-14.3 6.6-21.6 6.6-10.2 0-19.4-3.8-26.4-10.1-.5-.5-.1-1.2.6-.8 7.5 4.4 16.8 7 26.4 7 6.5 0 13.6-1.3 20.1-4.1 1-.4 1.8.7.9 1.4z" fill="#FF9900"/>
+                <path d="M52.7 38.9c-.7-.9-4.8-.4-6.6-.2-.6.1-.6-.4-.1-.8 3.2-2.3 8.5-1.6 9.1-.9.6.8-.2 6.2-3.2 8.8-.5.4-.9.2-.7-.3.7-1.7 2.2-5.6 1.5-6.6z" fill="#FF9900"/>
+              </svg>
+            )}
+            {cert.logo === 'gcp' && (
+              <svg viewBox="0 0 64 64" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40.6 22.8h1.6l4.6-4.6.2-2C42.8 12.4 37.6 10 32 10c-8.2 0-15.2 4.8-18.4 11.8l1.7.2 9.2-1.5.7-.7c2.5-2.7 6.2-4.2 9.8-3.6 2.6.4 4.8 1.7 6.4 3.6l-.8 3z" fill="#EA4335"/>
+                <path d="M50.8 21.8c-1.2-3.6-3.4-6.8-6.2-9.2l-6.4 6.4c2.4 1.9 3.9 4.8 4 8v1c2.8 0 5 2.2 5 5s-2.2 5-5 5H32l-1 1v6l1 1h10.2c7.4 0 13.6-5.8 13.8-13.2.2-4.6-2-9-5.2-12z" fill="#4285F4"/>
+                <path d="M21.8 46h10.2v-8H21.8c-.7 0-1.4-.2-2-.4l-1.4.4-4.6 4.6-.4 1.4c2.2 1.4 4.8 2 7.4 2h1z" fill="#34A853"/>
+                <path d="M21.8 19.6C14.4 19.8 8.4 26 8.2 33.4c-.2 4.6 2 8.8 5.2 11.6l6.4-6.4c-2-1-3.4-3-3.4-5.4 0-3.2 2.6-5.8 5.8-5.8.8 0 1.6.2 2.4.4l6.4-6.4c-2.6-1.4-5.6-2-8.6-1.8h-.6z" fill="#FBBC05"/>
+              </svg>
+            )}
+            {cert.logo === 'mongodb' && (
+              <svg viewBox="0 0 64 64" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.3 8.4c-.4-.8-.8-1.2-.9-1.8-.4-.4-.4-.8-.8-1.2 0 0 0 .4-.4.4-.4.8-.4 1.6-.8 2-.8 1.6-2 2.8-3.2 4.4-3.6 4-6 8.8-6.4 14.4-.4 3.2.4 6 1.6 8.8 2 4.4 5.2 7.6 9.2 10l.8.8c0-.4.4-.8.4-1.2l.4-3.2c0-.4 0-.4-.4-.8-1.2-.8-2-1.6-2.8-2.8-1.6-2-2.4-4.4-2.4-7.2 0-2.8.8-5.2 2.4-7.2 1.2-1.6 2.8-2.8 4.4-4 0 0 .4-.4.4-.8-.4-2.8-.8-5.6-1.2-8.4 0-.8 0-1.6-.4-2.4l.1.2z" fill="#00ED64"/>
+                <path d="M34.1 42.8c0-.4 0-.4-.4-.8-.8-.4-1.2-1.2-1.2-2v-.4c.4.4.8.4.8.8.8.4 1.2.4 2 .4 0 0 .4 0 .4.4-.4 2-.4 4-.8 6l-.4 1.2c0 .4 0 .4-.4.4v-6z" fill="#B8C4C2"/>
+                <path d="M34.5 39.6c0-.4-.4-.8-.8-1.2-.4 0-.4-.4-.4-.4.4 0 .4-.4.8-.4 1.2-.4 2-1.2 2.8-2.4 1.6-2.4 2-5.2 1.6-8-.4-2.4-1.2-4.4-2.8-6.4-1.2-1.6-2.8-3.2-4-4.8-.4-.4-.8-1.2-1.2-1.6 0 2.4-.4 4.4-.8 6.8 0 .4 0 .8-.4 1.2 0 .4.4.4.4.8 2 2 3.6 4 4.4 6.8.4 1.6.8 3.2.4 4.8-.4 2-1.2 3.6-2.8 4.8-.4.4-.4.4-.4.8 0 .8.4 2 1.2 2.4.4.4.4.4.4.8v.4c.4-1.2.8-2.4 1.2-3.6.4-.4.4-.4.4-.8z" fill="#12924F"/>
+              </svg>
+            )}
+            {cert.logo === 'scrum' && (
+              <svg viewBox="0 0 64 64" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="22" stroke="#009FDA" stroke-width="3" fill="none"/>
+                <circle cx="32" cy="32" r="8" fill="#009FDA"/>
+                <circle cx="32" cy="14" r="4" fill="#009FDA"/>
+                <circle cx="47.6" cy="41" r="4" fill="#009FDA"/>
+                <circle cx="16.4" cy="41" r="4" fill="#009FDA"/>
+                <line x1="32" y1="18" x2="32" y2="24" stroke="#009FDA" stroke-width="2"/>
+                <line x1="44.4" y1="39" x2="39" y2="35" stroke="#009FDA" stroke-width="2"/>
+                <line x1="19.6" y1="39" x2="25" y2="35" stroke="#009FDA" stroke-width="2"/>
+              </svg>
+            )}
+          </div>
+          <div class="cert-info">
+            <p class="cert-name">{cert.name}</p>
+            <span class="cert-level" style={`color: ${cert.color}`}>{cert.level}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

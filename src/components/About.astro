@@ -1,0 +1,35 @@
+---
+const stats = [
+  { value: '5+', label: 'Years Experience', count: 5 },
+  { value: '7', label: 'Cloud Certifications', count: 7 },
+  { value: '35+', label: 'CI/CD Pipelines', count: 35 },
+  { value: '3', label: 'Cloud Platforms', count: 3 },
+];
+
+const tags = ['DevOps', 'CI/CD', 'AWS', 'Azure', 'GCP', 'Terraform', 'Kubernetes', 'GitHub Actions', 'GitOps', 'Release Management'];
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <p class="section-label reveal">About Me</p>
+    <h2 class="section-title reveal stagger-1">Engineer Who Ships</h2>
+    <div class="about-text reveal stagger-2">
+      <p>Senior Platform Engineer and Release Manager with 5+ years of experience in DevOps, cloud infrastructure, and CI/CD. I design systems that help teams ship faster and more&nbsp;reliably.</p>
+      <p>I specialize in pipeline automation, release management, and cloud platform engineering for enterprise environments - from designing CI/CD blueprints for large monorepos to coordinating releases across multiple&nbsp;environments.</p>
+      <p>My toolkit centers on GitHub Actions, Terraform, AWS, Azure, Kubernetes, and GitOps workflows. I hold 7 cloud certifications across AWS and&nbsp;GCP.</p>
+    </div>
+    <div class="stat-grid reveal stagger-3">
+      {stats.map((stat) => (
+        <div class="card stat-card">
+          <span class="stat-number" data-count={stat.count}>{stat.value}</span>
+          <p>{stat.label}</p>
+        </div>
+      ))}
+    </div>
+    <div class="tag-row reveal stagger-4">
+      {tags.map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+  </div>
+</section>

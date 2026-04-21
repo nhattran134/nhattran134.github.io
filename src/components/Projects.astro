@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <p class="section-label reveal">Projects</p>
+    <h2 class="section-title reveal">Things I've Built</h2>
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <a href={`/projects/${project.id}`} class="card reveal project-card">
+          <h4>{project.data.title}</h4>
+          <p>{project.data.description}</p>
+          <div class="tag-row">
+            {project.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

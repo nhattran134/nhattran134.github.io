@@ -1,0 +1,27 @@
+---
+const services = [
+  { icon: '⚙️', title: 'CI/CD Pipeline Design', desc: 'End-to-end pipeline architecture using GitHub Actions, GitLab CI, or Jenkins. From mono-repo strategies to multi-environment deployments.' },
+  { icon: '☁️', title: 'Cloud Infrastructure', desc: 'AWS and Azure infrastructure design, implementation, and optimization. Landing zones, networking, security, and cost management.' },
+  { icon: '🚀', title: 'Release Management', desc: 'Release planning, CAB coordination, environment promotion strategies, and rollback procedures for enterprise applications.' },
+  { icon: '🏗️', title: 'Platform Engineering', desc: 'Internal developer platforms, golden paths, reusable pipeline blueprints, and self-service infrastructure.' },
+  { icon: '🔄', title: 'DevOps Transformation', desc: 'Assess current practices, identify bottlenecks, and implement DevOps culture, tooling, and automation incrementally.' },
+  { icon: '📐', title: 'Infrastructure as Code', desc: 'Terraform modules, state management, multi-account strategies, and drift detection for AWS, Azure, and GCP.' },
+];
+---
+
+<section id="services" class="section">
+  <div class="container">
+    <p class="section-label reveal">Services</p>
+    <h2 class="section-title reveal stagger-1">How I Can Help</h2>
+    <p class="section-sub reveal stagger-2">Available for consulting, contract work, and full-time opportunities.</p>
+    <div class="services-grid">
+      {services.map((s, i) => (
+        <div class={`card reveal stagger-${(i % 6) + 1}`}>
+          <div class="service-icon">{s.icon}</div>
+          <h4>{s.title}</h4>
+          <p>{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
