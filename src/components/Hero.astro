@@ -24,15 +24,232 @@
     <div class="hero-code" aria-hidden="true">
       <div class="code-window">
         <div class="code-titlebar">
-          <span class="code-dot code-dot--red"></span>
-          <span class="code-dot code-dot--yellow"></span>
-          <span class="code-dot code-dot--green"></span>
-          <span class="code-filename">deploy.yml</span>
+          <span class="code-filename">pipeline.yml</span>
+          <span class="code-titlebar-right">utf-8[unix]</span>
         </div>
         <pre class="code-body"><code id="hero-code-text"></code></pre>
-        <div class="code-cursor" id="hero-cursor"></div>
+        <div class="code-statusbar">
+          <span class="vim-mode" id="vim-mode">-- INSERT --</span>
+          <span class="vim-file">pipeline.yml</span>
+          <span class="vim-pos" id="vim-pos">1,1</span>
+        </div>
       </div>
     </div>
     <div class="hero-orb" aria-hidden="true"></div>
   </div>
 </section>
+
+<style>
+  .hero {
+    padding-top: 140px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .hero-greeting {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .hero-social {
+    display: flex;
+    gap: 16px;
+  }
+
+  .hero-social a {
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .hero-social a:hover {
+    color: var(--accent);
+  }
+
+  .hero-orb {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15), rgba(20, 184, 166, 0.08), transparent 70%);
+    filter: blur(60px);
+    animation: orb-float 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes orb-float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 20px) scale(1.05); }
+  }
+
+  .hero-code {
+    position: relative;
+  }
+
+  .code-window {
+    background: rgba(22, 23, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  .code-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .code-filename {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .code-titlebar-right {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.25);
+    font-family: var(--font-mono);
+  }
+
+  .code-statusbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+  }
+
+  .vim-mode {
+    color: #50fa7b;
+    font-weight: 600;
+  }
+
+  .vim-file {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .vim-pos {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .code-body {
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-height: 280px;
+    position: relative;
+    margin: 0;
+    white-space: pre;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+  }
+
+  .code-body :global(.kw) { color: #ff79c6; }
+  .code-body :global(.str) { color: #f1fa8c; }
+  .code-body :global(.key) { color: #8be9fd; }
+  .code-body :global(.cm) { color: #6272a4; }
+  .code-body :global(.val) { color: #bd93f9; }
+  .code-body :global(.fn) { color: #50fa7b; }
+
+  @keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      padding-top: 100px;
+      min-height: auto;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-code {
+      display: none;
+    }
+
+    .hero-particles {
+      display: none;
+    }
+
+    .hero-orb {
+      width: 300px;
+      height: 300px;
+      top: -10%;
+      right: -15%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .hero-cta :global(.btn) {
+      width: 100%;
+    }
+
+    .hero-orb {
+      display: none;
+    }
+  }
+</style>

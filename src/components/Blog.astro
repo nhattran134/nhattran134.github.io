@@ -30,3 +30,35 @@ const posts = (await getCollection('blog'))
     </div>
   </div>
 </section>
+
+<style>
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .blog-card time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .blog-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .blog-more {
+    margin-top: 32px;
+    text-align: center;
+  }
+</style>

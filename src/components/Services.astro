@@ -1,11 +1,11 @@
 ---
 const services = [
-  { icon: '⚙️', title: 'CI/CD Pipeline Design', desc: 'End-to-end pipeline architecture using GitHub Actions, GitLab CI, or Jenkins. From mono-repo strategies to multi-environment deployments.' },
-  { icon: '☁️', title: 'Cloud Infrastructure', desc: 'AWS and Azure infrastructure design, implementation, and optimization. Landing zones, networking, security, and cost management.' },
-  { icon: '🚀', title: 'Release Management', desc: 'Release planning, CAB coordination, environment promotion strategies, and rollback procedures for enterprise applications.' },
-  { icon: '🏗️', title: 'Platform Engineering', desc: 'Internal developer platforms, golden paths, reusable pipeline blueprints, and self-service infrastructure.' },
-  { icon: '🔄', title: 'DevOps Transformation', desc: 'Assess current practices, identify bottlenecks, and implement DevOps culture, tooling, and automation incrementally.' },
-  { icon: '📐', title: 'Infrastructure as Code', desc: 'Terraform modules, state management, multi-account strategies, and drift detection for AWS, Azure, and GCP.' },
+  { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>', title: 'CI/CD Pipeline Design', desc: 'End-to-end pipeline architecture using GitHub Actions, GitLab CI, or Jenkins. From mono-repo strategies to multi-environment deployments.' },
+  { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>', title: 'Cloud Infrastructure', desc: 'AWS and Azure infrastructure design, implementation, and optimization. Landing zones, networking, security, and cost management.' },
+  { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>', title: 'Release Management', desc: 'Release planning, CAB coordination, environment promotion strategies, and rollback procedures for enterprise applications.' },
+  { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>', title: 'Platform Engineering', desc: 'Internal developer platforms, golden paths, reusable pipeline blueprints, and self-service infrastructure.' },
+  { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>', title: 'DevOps Transformation', desc: 'Assess current practices, identify bottlenecks, and implement DevOps culture, tooling, and automation incrementally.' },
+  { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', title: 'Infrastructure as Code', desc: 'Terraform modules, state management, multi-account strategies, and drift detection for AWS, Azure, and GCP.' },
 ];
 ---
 
@@ -17,7 +17,7 @@ const services = [
     <div class="services-grid">
       {services.map((s, i) => (
         <div class={`card reveal stagger-${(i % 6) + 1}`}>
-          <div class="service-icon">{s.icon}</div>
+          <div class="service-icon" set:html={s.icon} />
           <h4>{s.title}</h4>
           <p>{s.desc}</p>
         </div>
@@ -25,3 +25,33 @@ const services = [
     </div>
   </div>
 </section>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .services-grid :global(.card) h4 {
+    margin-bottom: 8px;
+  }
+
+  .services-grid :global(.card) p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .service-icon {
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

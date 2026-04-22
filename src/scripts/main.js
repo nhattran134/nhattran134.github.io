@@ -151,22 +151,34 @@
   var codeEl = document.getElementById('hero-code-text');
   if (codeEl) {
     var lines = [
-      { text: '# deploy.yml', cls: 'cm' },
-      { text: 'name: ', cls: 'key', rest: [{ text: 'Deploy Pipeline', cls: 'str' }] },
-      { text: '' },
-      { text: 'on:', cls: 'key' },
-      { text: '  push:', cls: 'key' },
-      { text: '    branches: ', cls: 'key', rest: [{ text: '[main]', cls: 'val' }] },
+      { text: '# pipeline.yml', cls: 'cm' },
+      { text: 'name: ', cls: 'key', rest: [{ text: 'CI/CD Pipeline', cls: 'str' }] },
+      { text: 'on: ', cls: 'key', rest: [{ text: '[push, pull_request]', cls: 'val' }] },
       { text: '' },
       { text: 'jobs:', cls: 'key' },
-      { text: '  deploy:', cls: 'key' },
+      { text: '  discover:', cls: 'key' },
       { text: '    runs-on: ', cls: 'key', rest: [{ text: 'self-hosted', cls: 'str' }] },
+      { text: '    outputs:', cls: 'key' },
+      { text: '      matrix: ', cls: 'key', rest: [{ text: '${{ steps.detect.outputs.projects }}', cls: 'fn' }] },
+      { text: '' },
+      { text: '  build:', cls: 'key' },
+      { text: '    needs: ', cls: 'key', rest: [{ text: 'discover', cls: 'str' }] },
+      { text: '    strategy:', cls: 'key' },
+      { text: '      matrix: ', cls: 'key', rest: [{ text: '${{ fromJson(needs.discover.outputs.matrix) }}', cls: 'fn' }] },
       { text: '    steps:', cls: 'key' },
       { text: '      - uses: ', cls: 'key', rest: [{ text: 'actions/checkout@v4', cls: 'str' }] },
-      { text: '      - run: ', cls: 'key', rest: [{ text: 'terraform plan', cls: 'fn' }] },
+      { text: '      - run: ', cls: 'key', rest: [{ text: 'terraform init && terraform plan', cls: 'fn' }] },
+      { text: '      - run: ', cls: 'key', rest: [{ text: 'trivy fs --severity HIGH,CRITICAL .', cls: 'fn' }] },
+      { text: '' },
+      { text: '  deploy:', cls: 'key' },
+      { text: '    needs: ', cls: 'key', rest: [{ text: '[build]', cls: 'str' }] },
+      { text: '    environment: ', cls: 'key', rest: [{ text: 'production', cls: 'val' }] },
+      { text: '    permissions:', cls: 'key' },
+      { text: '      id-token: ', cls: 'key', rest: [{ text: 'write  ', cls: 'val' }, { text: '# OIDC', cls: 'cm' }] },
+      { text: '    steps:', cls: 'key' },
       { text: '      - run: ', cls: 'key', rest: [{ text: 'terraform apply -auto-approve', cls: 'fn' }] },
       { text: '' },
-      { text: '# ✓ Deployed successfully', cls: 'cm' },
+      { text: '# Apply complete! Resources: 12 added, 3 changed, 0 destroyed.', cls: 'cm' },
     ];
 
     var lineIdx = 0;
@@ -237,10 +249,24 @@
       if (charIdx <= fullLen) {
         codeEl.innerHTML = output + renderPartial(line, charIdx);
         charIdx++;
+        codeEl.parentElement.scrollTop = codeEl.parentElement.scrollHeight;
+        var vimPos = document.getElementById('vim-pos');
+        if (vimPos) vimPos.textContent = (lineIdx + 1) + ',' + charIdx;
         setTimeout(typeLine, speed);
       } else {
         output += renderLine(line) + '\n';
         codeEl.innerHTML = output;
+        codeEl.parentElement.scrollTop = codeEl.parentElement.scrollHeight;
+        lineIdx++;
+        charIdx = 0;
+        if (lineIdx >= lines.length) {
+          var vimMode = document.getElementById('vim-mode');
+          var vimPos2 = document.getElementById('vim-pos');
+          if (vimMode) vimMode.textContent = '-- NORMAL --';
+          if (vimMode) vimMode.style.color = '#bd93f9';
+          if (vimPos2) vimPos2.textContent = lines.length + ',1';
+          return;
+        }
         lineIdx++;
         charIdx = 0;
         setTimeout(typeLine, lineDelay);

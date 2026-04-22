@@ -25,3 +25,55 @@ const testimonials = await getCollection('testimonials');
     </div>
   </div>
 </section>
+
+<style>
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .quote-mark {
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.4;
+  }
+
+  .testimonial-body p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: auto;
+  }
+
+  .testimonial-author strong {
+    font-size: 0.9rem;
+    color: var(--text-heading);
+  }
+
+  .testimonial-author span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -33,3 +33,52 @@ const tags = ['DevOps', 'CI/CD', 'AWS', 'Azure', 'GCP', 'Terraform', 'Kubernetes
     </div>
   </div>
 </section>
+
+<style>
+  .about-text {
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+
+  .about-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .about-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .stat-card {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .stat-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .stat-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
